@@ -104,6 +104,7 @@ dojo.declare("bespin.client.Server", null, {
                     }
                 }
             }
+            if ((method == "PUT" || method == "POST") && payload == null) payload = "";
             xhr.send(payload);
         } else {
             var fullUrl = this.SERVER_BASE_URL + url;
