@@ -662,7 +662,8 @@ dojo.declare("bespin.client.Server", null, {
                                 bespin.publish(eventName, message);
                             }
                         }
-                        setTimeout(doProcessMessages, 1000);
+                        if (messages.length > 0)
+                          setTimeout(doProcessMessages, 1000);
                     },
                     onFailure: function(message) {
                         setTimeout(doProcessMessages, 1000);
